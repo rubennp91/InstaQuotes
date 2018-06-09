@@ -21,7 +21,7 @@ Libraries used:
 * sys
 * getpass
 * random
-* PL
+* PIL
 
 God, this code uses a lot of libraries for its lenght.
 
