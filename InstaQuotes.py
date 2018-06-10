@@ -159,7 +159,7 @@ def writeOnImage(picture,quoteL):
     
     fontsPath = os.path.join(wd,"fonts")
     fonts = os.listdir(fontsPath)
-    scale = 0.1
+    scale = 0.08
     
     def calculateFontSize(scale, width, height, quoteL, fontsPath):
         """
