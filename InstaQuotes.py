@@ -239,8 +239,9 @@ def writeOnImage(picture,quoteL):
 def complementaryColor(img):
     """
     Get the text used for the color by using the
-    mean color of the image and calculating
-    the complementary.
+    median color of the image and calculating
+    the complementary. This is not ideal does not work
+    quite properly.
     
     Arguments taken:
         img: the image in PIL format
