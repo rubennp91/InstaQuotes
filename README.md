@@ -3,7 +3,7 @@ This is a tool for creating non-motivational posters. Just give it an instagram 
 
 Call example:
 ```
-InstaGibberish.py natgeo "Snoop Dogg" en
+InstaQuotes.py natgeo "Snoop Dogg" en
 ```
 The login is by default deactivated but it can be activated by uncommenting the lines in getLogin. Without an approved follow and a login you can only download the public pictures, which is what the script does by default.
 
