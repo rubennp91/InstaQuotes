@@ -5,7 +5,7 @@ Call example:
 ```
 InstaGibberish.py natgeo "Snoop Dogg" en
 ```
-It will ask for an instagram username and a password. If not provided it will fetch the public pictures.
+The login is by default deactivated but it can be activated by uncommenting the lines in getLogin. Without an approved follow and a login you can only download the public pictures, which is what the script does by default.
 
 Languages supported: en, es, de, fr, it
 
