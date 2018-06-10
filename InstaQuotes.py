@@ -243,7 +243,7 @@ def complementaryColor(img):
         b: blue color
     """
     a = ImageStat.Stat(img) # Open the image with ImageStat
-    a = a.rms # Calculate the mean color of the image
+    a = a.rms # Calculate the rms color of the image
     
     r = 255 - a[0] # Calculate
     g = 255 - a[1] # the
