@@ -23,6 +23,9 @@ Libraries used:
 * random
 * PIL
 
+Font used:
+* IndieFlower.ttf (https://fonts.google.com/specimen/Indie+Flower)
+
 God, this code uses a lot of libraries for its lenght.
 
 ruben.np91@gmail.com
