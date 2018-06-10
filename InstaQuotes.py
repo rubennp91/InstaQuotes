@@ -68,6 +68,8 @@ def keepRandomFile(current, new):
     
 def getLogin():
     """
+    Deactivated by default
+    
     This function handles the login session for the instagram-scraper
     using the getpass library through console input.
     If no user or password are written the function
@@ -81,13 +83,18 @@ def getLogin():
         usr: instagram username
         pswd: instagram password
     """
+    
+    return "a", "a" # Comment this line for login options
+    
+    # Uncomment the next lines for login options
+    """
     usr = raw_input("IG Username (yours, optional): ")
     pswd = str(getpass())
     if pswd == "" or usr == "":
         return "a", "a"
     else:
         return usr,pswd
-    
+    """
     
 def getQuote(author, language = False):
     """
@@ -243,7 +250,7 @@ def complementaryColor(img):
         b: blue color
     """
     a = ImageStat.Stat(img) # Open the image with ImageStat
-    a = a.var # Calculate the var of each color band
+    a = a.median # Calculate the median of each color band
     
     r = 255 - a[0] # Calculate
     g = 255 - a[1] # the
@@ -269,10 +276,13 @@ def main():
     
     # Get the arguments from the console
     # Otherwise assign two default ones
-    account = argv[1] if len(argv) > 1 else "natgeo"
-    quote_author = argv[2] if len(argv) > 1 else "Snoop Dogg"
-    language = argv[3] if len(argv) > 1 else "en"
-    
+    try:
+        account = argv[1] if len(argv) > 1 else "natgeo"
+        quote_author = argv[2] if len(argv) > 1 else "Snoop Dogg"
+        language = argv[3] if len(argv) > 1 else "en"
+    except:
+        language = "en"
+        
     # Get the picture to work with
     picture = getInstagramFile(str(account))
     
