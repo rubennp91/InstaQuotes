@@ -108,7 +108,7 @@ def getQuote(author, language = False):
         count: the lenght of the quote in words
         language: the languages used to retrieve the quote (english or spanish)
     """
-    count = []
+    count = float('inf')
     languages = ["en","es","de","fr","it"] # Languages to search the author
     
     while count > 15: # Keep it short, no quotes longer than 15 words
