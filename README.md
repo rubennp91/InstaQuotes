@@ -1,9 +1,9 @@
 # InstaQuotes
-This is a tool for creating non-motivational posters. Just give it an instagram profile, a wikiquote name to search and a language.
+This is a Python 2.7 tool for creating non-motivational posters. Just give it an instagram profile, a wikiquote name to search and a language.
 
 Call example:
 ```
-InstaQuotes.py natgeo "Snoop Dogg" en
+python InstaQuotes.py natgeo "Snoop Dogg" en
 ```
 The login is by default deactivated but it can be activated by uncommenting the lines in getLogin. Without an approved follow and a login you can only download the public pictures, which is what the script does by default.
 
@@ -26,6 +26,6 @@ Libraries used:
 Font used:
 * IndieFlower.ttf (https://fonts.google.com/specimen/Indie+Flower)
 
-God, this code uses a lot of libraries for its lenght.
+God, this code uses a lot of libraries for its length.
 
 ruben.np91 at gmail.com
