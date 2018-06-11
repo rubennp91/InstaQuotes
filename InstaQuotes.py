@@ -317,10 +317,6 @@ def main():
         language = argv[3] if len(argv) > 1 else "en"
     except:
         language = "en"
-    
-    print(account)
-    print(quote_author)
-    print(language)
         
     # Get the picture to work with
     picture = getInstagramFile(str(account))
