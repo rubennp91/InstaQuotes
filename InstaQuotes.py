@@ -293,8 +293,8 @@ def main():
 
     
     # Split the quote in two equal parts, by words
-    quoteL.append(" ".join(quote.rsplit(" ")[:lenght/2]))
-    quoteL.append(" ".join(quote.rsplit(" ")[lenght/2:]))
+    quoteL.append(" ".join(quote.rsplit(" ")[:int(lenght/2)]))
+    quoteL.append(" ".join(quote.rsplit(" ")[int(lenght/2):]))
     
     # Write the text on the image
     image = writeOnImage(picture,quoteL)
