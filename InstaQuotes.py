@@ -210,7 +210,9 @@ def writeOnImage(picture,quoteL):
     
     # tSize = [d.textsize(quoteL[0],font = fnt),d.textsize(quoteL[1],font = fnt)]
     
-    r, g, b = complementaryColor(img) # Get the complementary color for the text
+    # Complementary color for the outline, median for the text
+    border_color = complementaryColor(img)
+    text_color = medianColor(img)
     
     # Determinate the position of the first line of text, by substracting
     # the lenght of the text from the width of the image and the one fourth
@@ -222,12 +224,23 @@ def writeOnImage(picture,quoteL):
     # adding the size of the font to fit it just below the first line
     txtPos.append((((width/2)-(int(tSize[1][0])/2)),hFourth*3+fontSize))
     
+    # Draw borders for outlined font
+    border_width = 1
+    d.text((txtPos[0][0]-border_width, txtPos[0][1]-border_width), quoteL[0], font=fnt, fill=border_color)
+    d.text((txtPos[0][0]+border_width, txtPos[0][1]-border_width), quoteL[0], font=fnt, fill=border_color)
+    d.text((txtPos[0][0]-border_width, txtPos[0][1]+border_width), quoteL[0], font=fnt, fill=border_color)
+    d.text((txtPos[0][0]+border_width, txtPos[0][1]+border_width), quoteL[0], font=fnt, fill=border_color)
+    d.text((txtPos[1][0]-border_width, txtPos[1][1]-border_width), quoteL[1], font=fnt, fill=border_color)
+    d.text((txtPos[1][0]+border_width, txtPos[1][1]-border_width), quoteL[1], font=fnt, fill=border_color)
+    d.text((txtPos[1][0]-border_width, txtPos[1][1]+border_width), quoteL[1], font=fnt, fill=border_color)
+    d.text((txtPos[1][0]+border_width, txtPos[1][1]+border_width), quoteL[1], font=fnt, fill=border_color)
+
     # Write the first half of the text using the parameters calculated above
-    d.text(txtPos[0], quoteL[0], font=fnt, fill = (r, g, b))
+    d.text(txtPos[0], quoteL[0], font=fnt, fill = text_color)
     # d.text((((width/2)-(int(tSize[0][0])/2)),hFourth*3), quoteL[0], font=fnt, fill = (r, g, b))
     
     # Write the second half of the text using the parameters calculated above
-    d.text(txtPos[1], quoteL[1], font=fnt, fill = (r, g, b))
+    d.text(txtPos[1], quoteL[1], font=fnt, fill = text_color)
     # d.text((((width/2)-(int(tSize[1][0])/2)),hFourth*3+fontSize), quoteL[1], font=fnt, fill = (r, g, b))
     
     img.save('1.png') # Save the image as 1.png
@@ -259,6 +272,27 @@ def complementaryColor(img):
     
     return int(r), int(g), int(b)
     
+    
+def medianColor(img):
+    """
+    Get the median color of the image.
+    
+    Arguments taken:
+        img: the image in PIL format
+    Returns:
+        r: red color
+        g: green color
+        b: blue color
+    """
+    a = ImageStat.Stat(img) # Open the image with ImageStat
+    a = a.median # Calculate the median of each color band
+    
+    r = a[0] # Calculate
+    g = a[1] # the
+    b = a[2] # complementary
+    
+    return int(r), int(g), int(b)
+    
 
 def main():
     """
@@ -283,6 +317,10 @@ def main():
         language = argv[3] if len(argv) > 1 else "en"
     except:
         language = "en"
+    
+    print(account)
+    print(quote_author)
+    print(language)
         
     # Get the picture to work with
     picture = getInstagramFile(str(account))
