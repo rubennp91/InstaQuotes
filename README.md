@@ -1,5 +1,5 @@
 # InstaQuotes
-This is a Python 2.7 tool for creating non-motivational posters. Just give it an instagram profile, a wikiquote name to search and a language.
+This is a tool for creating non-motivational posters. Just give it an instagram profile, a wikiquote name to search and a language.
 
 Call example:
 ```
