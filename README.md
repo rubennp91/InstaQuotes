@@ -1,3 +1,5 @@
+This project is deprecated
+
 # InstaQuotes
 This is a tool for creating non-motivational posters. Just give it an instagram profile, a wikiquote name to search and a language.
 
